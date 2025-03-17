@@ -12,6 +12,9 @@ form.addEventListener('submit', addItem);
 // Deleting todo
 todoList.addEventListener('click', removeTodo);
 
+// Marking todo as done
+todoList.addEventListener('click', todoDone);
+
 
 // Adding items in the list
 function addItem(e) {
@@ -19,6 +22,9 @@ function addItem(e) {
 
     // getting input value
     let newTodo = document.getElementById('todo').value;
+
+    // Preventing adding new todo
+    if (!newTodo.trim()) return;
 
     // Creating new LI element
     let li = document.createElement('li');
@@ -28,14 +34,15 @@ function addItem(e) {
     // Adding the new li element to the ul
     todoList.appendChild(li);
 
-    
-
 
     // Creating delete button
     let deleteButton = document.createElement('button');
     deleteButton.className = 'delete-button';
     deleteButton.textContent = 'X';
     li.appendChild(deleteButton);
+
+    // Clear input field
+    document.getElementById('todo').value = '';
 }
 
 
@@ -50,4 +57,10 @@ function removeTodo(e) {
     }
 }
 
-// 
+// Marking Task as compeleted
+
+function todoDone(e) {
+    if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('completed');
+    }
+}
