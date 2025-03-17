@@ -6,8 +6,11 @@ let currentYear = new Date().getFullYear();
 // Adding current year in the footer
 footerYear.innerText = currentYear
 
-// Form submit event
+// Form creating new todo event
 form.addEventListener('submit', addItem);
+
+// Deleting todo
+todoList.addEventListener('click', removeTodo);
 
 
 // Adding items in the list
@@ -25,9 +28,26 @@ function addItem(e) {
     // Adding the new li element to the ul
     todoList.appendChild(li);
 
-    // Creating checkbox
-    let checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'todo-check';
-    li.appendChild(checkbox);
+    
+
+
+    // Creating delete button
+    let deleteButton = document.createElement('button');
+    deleteButton.className = 'delete-button';
+    deleteButton.textContent = 'X';
+    li.appendChild(deleteButton);
 }
+
+
+// Deleting Todo
+
+function removeTodo(e) {
+    if (e.target.classList.contains('delete-button')) {
+        if(confirm('Are you sure you want to delete this todo?')) {
+            var li = e.target.parentElement;
+            todoList.removeChild(li);
+        }
+    }
+}
+
+// 
