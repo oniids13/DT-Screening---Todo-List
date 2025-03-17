@@ -1,6 +1,9 @@
 const footerYear = document.getElementById('footer-year');
 const form = document.getElementById('add-form');
 const todoList = document.getElementById('todo-list')
+const themeToggle = document.getElementById('toggle-theme');
+const body = document.body;
+
 let currentYear = new Date().getFullYear();
 
 // Adding current year in the footer
@@ -64,3 +67,17 @@ function todoDone(e) {
         e.target.classList.toggle('completed');
     }
 }
+
+
+// Toggle theme
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+        themeToggle.textContent = 'Light Mode';
+    } else {
+        themeToggle.textContent = 'Dark Mode';
+    }
+})
+
+

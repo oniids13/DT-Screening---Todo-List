@@ -8,6 +8,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: white;
+    color: black;
+    transition: background 0.3s, color 0.3s;
 }
 
 main {
@@ -24,6 +27,12 @@ footer {
     padding: 10px;
     border-top: 1px solid black;
 }
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
 
 .completed {
     text-decoration: line-through;
