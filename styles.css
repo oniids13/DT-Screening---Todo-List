@@ -10,16 +10,22 @@ body {
     min-height: 100vh;
     background-color: white;
     color: black;
-    transition: background 0.3s, color 0.3s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 main {
-    flex: 1
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     text-align: center;
     border-bottom: 1px solid black;
+    padding: 10px;
 }
 
 footer {
@@ -39,6 +45,108 @@ footer {
     color: gray;
 }
 
-.todo-item {
+
+
+.todo {
+    padding-top: 10%;
+    text-align: center;
+}
+
+#todo-input {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(236, 240, 241);
+    border: none;
+}
+
+
+.todos {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #57B4BA;
+}
+
+.add-btn {
+    padding: 5px;
+    background-color: rgb(39, 174, 96);
+    border-radius: 5px;
+    border: none;
     cursor: pointer;
+}
+
+.add-btn:hover {
+    transform: scale(0.9);
+}
+
+#toggle-theme {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: gray;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.delete-button {
+    background-color: rgb(192, 57, 43);
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    transform: scale(0.9);
+    
+}
+
+/* Animation for todos */
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutShrink {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.todo-item {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: rgb(41, 128, 185);
+    transition: background 0.3s ease-in-out;
+    animation: fadeInSlide 0.3s ease-in-out;
+}
+
+.todo-item:hover {
+    background: #e0e0e0;
+}
+
+.removing {
+    animation: fadeOutShrink 0.3s ease-in-out forwards;
 }

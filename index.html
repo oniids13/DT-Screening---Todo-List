@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DT Screening - Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header>
-        <h1>My Todo List</h1>
-        <button id="toggle-theme">Dark Mode</button>
+        <h1>Todo List</h1>
+        <button id="toggle-theme">🌜</button>
     </header>
     <main>
         <div class="todo">
             <div class="add-todo">
                 <form id="add-form">
-                    <label for="todo">New Todo</label>
-                    <input type="text" name="todo" id="todo">
-                    <button type="submit">
+                    <input type="text" name="todo" id="todo-input" placeholder="Add todo" required>
+                    <button type="submit" class="add-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
                             <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
@@ -27,6 +29,7 @@
             </div>
             <div class="todos">
                 <h2>My Todos</h2>
+                <h3 id="date-today"></h3>
                 <ul id="todo-list">
 
                 </ul>
